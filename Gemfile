@@ -37,6 +37,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'searchkick'
 
 group :development do
+  gem 'factory_girl'
+
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

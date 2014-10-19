@@ -18,6 +18,13 @@ class HomeController < ApplicationController
   end
 
   def possible_ingredients
+    @recipes       = Recipe.search('*', where: { ingredient_data: params[:ingredient_ids], ingredient_count: possible_ingredient_count }, facets: [:ingredient_data])
+    ingredient_ids = @recipes.facets['ingredient_data']['terms']
+    Ingredient.find ingredient_ids
+  end
 
+  private
+  def possible_ingredient_count
+    params[:ingredient_ids].count + 1
   end
 end

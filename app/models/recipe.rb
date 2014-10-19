@@ -9,4 +9,8 @@ class Recipe < ActiveRecord::Base
       ingredient_data: ingredient_ids
     }
   end
+
+  def update_ingredient_count
+    update(ingredient_count: ingredients.count)
+  end
 end

@@ -1,0 +1,9 @@
+de:
+  activerecord:
+    models:
+      ingredient:
+        one: Zutat
+        other: Zutaten
+    attributes:
+      ingredient:
+        name: Name

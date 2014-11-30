@@ -1,0 +1,10 @@
+de:
+  activerecord:
+    models:
+      recipe:
+        one: Rezept
+        other: Rezepte
+    attributes:
+      recipe:
+        name: Name
+        description: Beschreibung

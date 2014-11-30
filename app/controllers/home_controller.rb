@@ -15,12 +15,14 @@ class HomeController < ApplicationController
 
   def recipes
     @recipes = Recipe.search('*', where: { ingredient_data: params[:ingredient_ids] }, facets: [:ingredient_data])
+    render json: @recipes
   end
 
   def possible_ingredients
     @recipes       = Recipe.search('*', where: { ingredient_data: params[:ingredient_ids], ingredient_count: possible_ingredient_count }, facets: [:ingredient_data])
-    ingredient_ids = @recipes.facets['ingredient_data']['terms']
+    ingredient_ids = @recipes.facets['ingredient_data']['terms'].map { |x| x['term'] }
     @ingredients   = Ingredient.find ingredient_ids
+    render json: @ingredients
   end
 
   private

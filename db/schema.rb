@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018164516) do
+ActiveRecord::Schema.define(version: 20141019115056) do
 
   create_table "assignments", force: true do |t|
     t.integer  "ingredient_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20141018164516) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ingredient_count"
   end
 
 end
